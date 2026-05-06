@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "id": "vuln_001",
+    "segment": "vulnerable",
+    "trigger": "high_consumo_ratio",
+    "title": "Consolida tus créditos de consumo",
+    "explanation_short": "Más del 70% de tu deuda está en tarjetas y créditos de consumo, los más caros del sistema. Consolidar puede reducir tu CAE total entre 15% y 30%.",
+    "action": "compare_consolidation_offers",
+    "articulos_referencia": ["Ley 18.010 Art. 6", "Ley 19.496 Art. 17B"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_002",
+    "segment": "vulnerable",
+    "trigger": "multiple_refinancings",
+    "title": "Cuidado con el ciclo de refinanciamiento",
+    "explanation_short": "Refinanciar repetidamente acumula comisiones y extiende plazos. Considera un crédito de consolidación con tasa fija menor.",
+    "action": "evaluate_consolidation_loan",
+    "articulos_referencia": ["Ley 19.496 Art. 17H"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_003",
+    "segment": "vulnerable",
+    "trigger": "many_institutions",
+    "title": "Centraliza tus deudas en menos instituciones",
+    "explanation_short": "Tener crédito en muchas instituciones aumenta el costo total y dificulta el seguimiento. Un crédito unificado simplifica y suele tener menor CAE.",
+    "action": "compare_consolidation_offers",
+    "articulos_referencia": ["Ley 19.496 Art. 17B"],
+    "priority": 2
+  },
+  {
+    "id": "vuln_004",
+    "segment": "vulnerable",
+    "trigger": "past_due_present",
+    "title": "Renegocia antes de que escale a DICOM",
+    "explanation_short": "Tienes pagos atrasados. Por la Ley 19.496 puedes solicitar repactación sin gastos en mora menor a 90 días. Actuar pronto evita registro en DICOM.",
+    "action": "request_renegotiation",
+    "articulos_referencia": ["Ley 19.496 Art. 17K", "Ley 21.521"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_005",
+    "segment": "vulnerable",
+    "trigger": "low_engagement",
+    "title": "Revisa tu carga financiera total",
+    "explanation_short": "Tu deuda equivale a varias veces tu ingreso mensual. Calcula tu carga real y prioriza las deudas más caras primero.",
+    "action": "review_carga_financiera",
+    "articulos_referencia": ["Ley 18.010 Art. 6 bis"],
+    "priority": 3
+  },
+  {
+    "id": "func_001",
+    "segment": "functional",
+    "trigger": "stable_with_mortgage",
+    "title": "Considera prepagar tu hipoteca",
+    "explanation_short": "Tienes hipoteca al día y tu carga es manejable. Pagos extras al principal reducen los intereses totales significativamente.",
+    "action": "evaluate_mortgage_prepayment",
+    "articulos_referencia": ["Ley 18.010", "Ley 19.439"],
+    "priority": 1
+  },
+  {
+    "id": "func_002",
+    "segment": "functional",
+    "trigger": "low_engagement",
+    "title": "Empieza un APV con descuento por planilla",
+    "explanation_short": "Tu situación financiera es estable. Un APV te da beneficio tributario y construye reserva para retiro.",
+    "action": "open_apv",
+    "articulos_referencia": ["DL 3500 Art. 20"],
+    "priority": 1
+  },
+  {
+    "id": "func_003",
+    "segment": "functional",
+    "trigger": "stable_with_mortgage",
+    "title": "Evalúa portabilidad financiera de tu hipoteca",
+    "explanation_short": "Por la Ley 21.236 puedes pedir tu hipoteca a otro banco con mejor tasa. El proceso debe completarse en 4 días hábiles.",
+    "action": "compare_mortgage_offers",
+    "articulos_referencia": ["Ley 21.236"],
+    "priority": 2
+  },
+  {
+    "id": "rec_001",
+    "segment": "recently_banked",
+    "trigger": "low_engagement",
+    "title": "Construye tu historial crediticio responsablemente",
+    "explanation_short": "Tener una cuenta es un buen primer paso. Un uso pequeño y consistente de tarjeta o un crédito acotado construye historial positivo.",
+    "action": "build_credit_history",
+    "articulos_referencia": [],
+    "priority": 1
+  },
+  {
+    "id": "rec_002",
+    "segment": "recently_banked",
+    "trigger": "low_engagement",
+    "title": "Activa alertas de movimientos en tu cuenta",
+    "explanation_short": "Configura notificaciones en tu app para detectar cobros indebidos pronto. La Ley 19.496 te da 30 días para reclamar cobros no autorizados.",
+    "action": "enable_account_alerts",
+    "articulos_referencia": ["Ley 19.496 Art. 17B"],
+    "priority": 2
+  },
+  {
+    "id": "rec_003",
+    "segment": "recently_banked",
+    "trigger": "low_engagement",
+    "title": "Conoce tus derechos como consumidor financiero",
+    "explanation_short": "La SERNAC y la CMF protegen al consumidor financiero. Saber qué exigir te previene de productos abusivos.",
+    "action": "learn_consumer_rights",
+    "articulos_referencia": ["Ley 19.496", "Ley 20.555"],
+    "priority": 3
+  },
+  {
+    "id": "unb_001",
+    "segment": "unbanked",
+    "trigger": "low_engagement",
+    "title": "Abre una cuenta básica gratuita",
+    "explanation_short": "BancoEstado ofrece CuentaRUT sin costo de mantención. Es el primer paso para acceder a productos financieros formales.",
+    "action": "open_basic_account",
+    "articulos_referencia": [],
+    "priority": 1
+  }
+]
