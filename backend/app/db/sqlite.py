@@ -1,6 +1,6 @@
 """SQLite persistence for anon profiles.
 
-Schema is one table, no PII column by design. ``anon_id`` is HMAC(secret, rut)
+Schema is one table, no PII column by design. ``anon_id`` is HMAC(secret, name|rut)
 and is the only identifier; same person re-uploading dedups via primary key.
 """
 

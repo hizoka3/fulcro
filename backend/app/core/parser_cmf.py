@@ -25,6 +25,16 @@ import pdfplumber
 _DATE_RE = re.compile(r"(\d{2}/\d{2}/\d{4})")
 _AMOUNT_RE = re.compile(r"\$[\d.\-]+")
 
+# CMF cover page layout: line 1 is the primary name (first names + paternal
+# surname). When the maternal surname doesn't fit on line 1, the PDF injects
+# it at the end of line 3 ("...entregada a CMF por las <SURNAME>"). The RUT
+# appears as "Rut: 12.345.678-9" somewhere in the first few lines.
+_RUT_RE = re.compile(r"Rut:\s*(\d{1,3}(?:\.\d{3})*-[\dKk])")
+_MATERNAL_RE = re.compile(
+    r"CMF por las\s+([A-ZÁÉÍÓÚÑ]+(?:\s+[A-ZÁÉÍÓÚÑ]+)*)\s*$",
+    re.MULTILINE,
+)
+
 # Multi-word tipos go first; standalone words last so they don't shadow longer
 # phrases (e.g., "Consumo" inside "Crédito de Consumo" matches the longer one
 # via rfind because we prefer the rightmost match).
@@ -124,6 +134,32 @@ def parse_informe_cmf(pdf_path: Path) -> Dict:
 def parse_informe_with_fallback(pdf_path: Path) -> Dict:
     """Wrapper for the demo-mode fallback added in BE1-4. Currently a passthrough."""
     return parse_informe_cmf(pdf_path)
+
+
+def extract_identity(pdf_path: Path) -> Tuple[str, str]:
+    """Pull (name, rut) from the CMF cover page.
+
+    Raises ValueError if either field is missing — caller should map to 422.
+    """
+    with pdfplumber.open(pdf_path) as pdf:
+        if not pdf.pages:
+            raise ValueError("Informe vacío")
+        text = pdf.pages[0].extract_text() or ""
+
+    lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    if not lines:
+        raise ValueError("No se pudo leer la portada del informe")
+
+    name = lines[0]
+    maternal = _MATERNAL_RE.search(text)
+    if maternal:
+        name = f"{name} {maternal.group(1).strip()}"
+
+    rut_match = _RUT_RE.search(text)
+    if not rut_match:
+        raise ValueError("No se pudo extraer el RUT del informe")
+
+    return name, rut_match.group(1)
 
 
 # ---------- internals ----------

@@ -4,10 +4,10 @@ from pathlib import Path
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from sqlalchemy.orm import Session
 
-from app.core.anonymizer import anonymize_rut, generate_avatar_name
+from app.core.anonymizer import anonymize_identity, generate_avatar_name
 from app.core.catalog_matcher import get_matcher
 from app.core.classifier import classify
-from app.core.parser_cmf import parse_informe_with_fallback
+from app.core.parser_cmf import extract_identity, parse_informe_with_fallback
 from app.db.sqlite import ProfileRecord, get_db
 from app.models.schemas import Avatar, Features, IngestResult
 
@@ -17,11 +17,10 @@ router = APIRouter()
 @router.post("/ingest", response_model=IngestResult)
 async def ingest(
     file: UploadFile = File(...),
-    rut: str = Form(...),
     ingreso: float = Form(580_000),
     db: Session = Depends(get_db),
 ):
-    """Parse CMF PDF + RUT, classify, match recommendations, persist, return."""
+    """Parse CMF PDF, derive identity from it, classify, persist, return."""
     if not file.filename or not file.filename.lower().endswith(".pdf"):
         raise HTTPException(400, "Solo se aceptan archivos PDF")
 
@@ -30,7 +29,12 @@ async def ingest(
         tmp_path = Path(tmp.name)
 
     try:
-        anon_id = anonymize_rut(rut)
+        try:
+            name, rut = extract_identity(tmp_path)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc))
+
+        anon_id = anonymize_identity(name, rut)
         avatar_name = generate_avatar_name(anon_id)
 
         try:

@@ -3,18 +3,20 @@ import hmac
 import os
 
 
-def anonymize_rut(rut: str) -> str:
-    """Deterministic anon_id from a Chilean RUT via HMAC-SHA256.
+def anonymize_identity(name: str, rut: str) -> str:
+    """Deterministic anon_id from (name, RUT) via HMAC-SHA256.
 
-    Same RUT → same anon_id, but the RUT itself is never stored.
-    Strips formatting (dots, dashes) and uppercases the verifier digit ('K')
-    so '19.523.183-4' and '195231834' produce the same id.
+    Same name+RUT → same anon_id, but neither field is stored.
+    Normalizes formatting (dots/dashes in RUT, casing and whitespace in
+    name) so reasonable parser variations still collide on the same id.
     """
     secret = os.environ.get("HMAC_SECRET", "").encode()
     if not secret:
         raise RuntimeError("HMAC_SECRET environment variable is not set")
-    rut_clean = rut.replace(".", "").replace("-", "").upper().encode()
-    return hmac.new(secret, rut_clean, hashlib.sha256).hexdigest()[:12]
+    rut_clean = rut.replace(".", "").replace("-", "").upper()
+    name_clean = " ".join(name.upper().split())
+    payload = f"{name_clean}|{rut_clean}".encode()
+    return hmac.new(secret, payload, hashlib.sha256).hexdigest()[:12]
 
 
 _ANIMALS = [
