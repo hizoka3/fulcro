@@ -1,0 +1,19 @@
+{
+  "anon_id": "b7e2c8a1f4d3",
+  "avatar": {
+    "name": "Puma 2847",
+    "image_url": "/avatars/puma_2847.svg"
+  },
+  "segment": "functional",
+  "features": {
+    "total_debt": 80000000,
+    "consumo_ratio": 0.05,
+    "past_due_ratio": 0.0,
+    "num_institutions": 3,
+    "num_refinancings": 0,
+    "has_mortgage": true,
+    "carga_financiera_pct": 0.25,
+    "dominant_signal": "stable_with_mortgage"
+  },
+  "recommendations": []
+}

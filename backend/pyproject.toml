@@ -1,0 +1,9 @@
+[project]
+name = "defensor-backend"
+version = "0.1.0"
+description = "Defensor — deterministic financial classification pipeline (BE-1)."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

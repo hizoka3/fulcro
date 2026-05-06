@@ -1,0 +1,19 @@
+{
+  "anon_id": "c4d8e1a9b2f6",
+  "avatar": {
+    "name": "Huemul 6193",
+    "image_url": "/avatars/huemul_6193.svg"
+  },
+  "segment": "recently_banked",
+  "features": {
+    "total_debt": 0,
+    "consumo_ratio": 0,
+    "past_due_ratio": 0,
+    "num_institutions": 1,
+    "num_refinancings": 0,
+    "has_mortgage": false,
+    "carga_financiera_pct": 0,
+    "dominant_signal": "low_engagement"
+  },
+  "recommendations": []
+}

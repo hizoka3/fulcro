@@ -1,0 +1,27 @@
+{
+  "anon_id": "a3f9d2e1b4c5",
+  "avatar": {
+    "name": "Cóndor 4521",
+    "image_url": "/avatars/condor_4521.svg"
+  },
+  "segment": "vulnerable",
+  "features": {
+    "total_debt": 4500000,
+    "consumo_ratio": 0.82,
+    "past_due_ratio": 0.15,
+    "num_institutions": 5,
+    "num_refinancings": 2,
+    "has_mortgage": false,
+    "carga_financiera_pct": 0.52,
+    "dominant_signal": "high_consumo_ratio"
+  },
+  "recommendations": [
+    {
+      "id": "vuln_001",
+      "title": "Consolida tus créditos de consumo",
+      "trigger": "high_consumo_ratio",
+      "action": "compare_consolidation_offers",
+      "priority": 1
+    }
+  ]
+}
