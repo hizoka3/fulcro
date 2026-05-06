@@ -1,0 +1,3 @@
+[submodule "fulcro-front"]
+	path = fulcro-front
+	url = git@github.com:hizoka3/fulcro-front.git
