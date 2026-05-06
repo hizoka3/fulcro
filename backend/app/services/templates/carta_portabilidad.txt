@@ -1,0 +1,39 @@
+SOLICITUD DE PORTABILIDAD FINANCIERA
+Ley N° 21.236 sobre Portabilidad Financiera
+
+Fecha: {fecha}
+Solicitante: {avatar_nombre} (identidad anonimizada vía Defensor)
+
+INSTITUCIÓN ACTUAL (proveedor inicial):
+{institucion}
+
+NUEVO PROVEEDOR (proveedor receptor):
+{nuevo_proveedor}
+
+PRODUCTO A PORTAR:
+{producto}
+
+DETALLE DE LA SOLICITUD:
+Por la presente, en mi calidad de cliente del producto financiero individualizado y al
+amparo de la Ley N° 21.236 sobre Portabilidad Financiera, vengo a solicitar formalmente
+el inicio del proceso de portabilidad de mi crédito hacia el proveedor receptor indicado.
+
+{descripcion}
+
+FUNDAMENTO LEGAL:
+{articulos_invocados}
+
+PETICIÓN:
+1. Emitir el Certificado de Liquidación de las obligaciones vigentes dentro de los plazos
+   legales establecidos.
+2. No imponer barreras, costos no autorizados ni condiciones distintas a las contempladas
+   en la Ley 21.236.
+3. Mantener informado al solicitante respecto del avance del proceso de portabilidad.
+
+DOCUMENTOS DE RESPALDO:
+- Informe de deuda CMF (anonimizado)
+- Oferta del nuevo proveedor (si aplica)
+
+Firma:
+{avatar_nombre}
+Solicitud generada vía Defensor (defensorchile.org)

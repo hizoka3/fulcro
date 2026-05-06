@@ -1,0 +1,27 @@
+RECLAMO ANTE EL SERVICIO NACIONAL DEL CONSUMIDOR (SERNAC)
+
+Fecha: {fecha}
+Reclamante: {avatar_nombre} (identidad anonimizada vía Defensor)
+
+INSTITUCIÓN RECLAMADA:
+{institucion}
+
+MOTIVO DEL RECLAMO:
+{motivo}
+
+FUNDAMENTO LEGAL:
+{articulos_invocados}
+
+DESCRIPCIÓN DETALLADA:
+{descripcion}
+
+PETICIÓN:
+{peticion}
+
+DOCUMENTOS DE RESPALDO:
+- Informe de deuda CMF (anonimizado)
+- Contrato del producto (si aplica)
+
+Firma:
+{avatar_nombre}
+Reclamo generado vía Defensor (defensorchile.org)

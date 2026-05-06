@@ -1,1 +1,212 @@
-[]
+[
+  {
+    "id": "vuln_001",
+    "segment": "vulnerable",
+    "trigger": "high_consumo_ratio",
+    "title": "Consolida tus créditos de consumo",
+    "explanation_short": "Más del 70% de tu deuda está en tarjetas y consumo, los productos más caros. Consolidar puede bajar tu CAE total.",
+    "action": "compare_consolidation_offers",
+    "articulos_referencia": ["Ley 18.010 Art. 6", "Ley 19.496 Art. 17 B"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_002",
+    "segment": "vulnerable",
+    "trigger": "multiple_refinancings",
+    "title": "Cuidado con el ciclo de refinanciamiento",
+    "explanation_short": "Refinanciaste el mismo crédito varias veces. Cada refinanciamiento suma comisiones y alarga el plazo. Mejor un crédito de consolidación a tasa fija.",
+    "action": "evaluate_consolidation_loan",
+    "articulos_referencia": ["Ley 19.496 Art. 17 H"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_003",
+    "segment": "vulnerable",
+    "trigger": "past_due_present",
+    "title": "Tienes mora vigente: actúa antes de Dicom",
+    "explanation_short": "Tienes deuda morosa. Antes de quedar en Dicom, puedes negociar repactación o convenios. Mientras antes hables, mejores condiciones logras.",
+    "action": "ver_plan_salida",
+    "articulos_referencia": ["Ley 19.496 Art. 39 C", "Ley 20.575"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_004",
+    "segment": "vulnerable",
+    "trigger": "many_institutions",
+    "title": "Tu deuda está dispersa en muchas instituciones",
+    "explanation_short": "Cinco o más acreedores hacen casi imposible llevar el control. Concentrar la deuda en una sola institución baja tasas y simplifica pagos.",
+    "action": "compare_consolidation_offers",
+    "articulos_referencia": ["Ley 21.236 Art. 1", "Ley 19.496 Art. 17 B"],
+    "priority": 2
+  },
+  {
+    "id": "vuln_005",
+    "segment": "vulnerable",
+    "trigger": "carga_financiera_alta",
+    "title": "Tu carga financiera supera el límite recomendado",
+    "explanation_short": "Más del 40% de tu ingreso se va en deuda. Es señal de sobreendeudamiento. Hay que renegociar o reestructurar urgente.",
+    "action": "ver_plan_salida",
+    "articulos_referencia": ["Ley 19.496 Art. 17 H", "Ley 20.555"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_006",
+    "segment": "vulnerable",
+    "trigger": "clausula_abusiva_detectada",
+    "title": "Detectamos una cláusula posiblemente abusiva",
+    "explanation_short": "Hay una cláusula en tu contrato que podría ser nula por abusiva. Puedes reclamar al SERNAC y exigir su no aplicación.",
+    "action": "generar_carta_clausula_abusiva",
+    "articulos_referencia": ["Ley 19.496 Art. 16", "Ley 19.496 Art. 16 A", "Ley 19.496 Art. 17 E"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_007",
+    "segment": "vulnerable",
+    "trigger": "tasa_cerca_tmc",
+    "title": "Tu tasa está al límite legal",
+    "explanation_short": "Tu CAE roza la Tasa Máxima Convencional. Es legal, pero es la tasa más alta permitida en Chile. Casi seguro hay alternativas más baratas.",
+    "action": "comparar_tasas_mercado",
+    "articulos_referencia": ["Ley 18.010 Art. 6", "Ley 18.010 Art. 6 bis"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_008",
+    "segment": "vulnerable",
+    "trigger": "mora_temprana",
+    "title": "Tienes atrasos recientes — actúa ahora",
+    "explanation_short": "Llevas pocos días de atraso. Si pagas o repactas antes de 90 días, evitas Dicom y los intereses penales escalan menos.",
+    "action": "ver_plan_salida",
+    "articulos_referencia": ["Ley 20.575"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_009",
+    "segment": "vulnerable",
+    "trigger": "producto_retail_dominante",
+    "title": "Tu deuda está concentrada en retail",
+    "explanation_short": "Las tarjetas de retail son las más caras del mercado. Cambiarlas por una tarjeta bancaria o un crédito de consumo baja tu costo financiero.",
+    "action": "comparar_tasas_mercado",
+    "articulos_referencia": ["Ley 18.010 Art. 6", "Ley 19.496 Art. 17 B"],
+    "priority": 2
+  },
+  {
+    "id": "vuln_010",
+    "segment": "vulnerable",
+    "trigger": "avance_efectivo_alto",
+    "title": "Avances en efectivo: el producto más caro",
+    "explanation_short": "Los avances en efectivo cobran tasa máxima y comisiones desde el día uno. Si estás usándolos seguido, hay que cortar el ciclo.",
+    "action": "educar_avance_efectivo",
+    "articulos_referencia": ["Ley 18.010 Art. 6", "Ley 20.555"],
+    "priority": 1
+  },
+  {
+    "id": "vuln_011",
+    "segment": "vulnerable",
+    "trigger": "comisiones_excesivas",
+    "title": "Te están cobrando comisiones que podrían ser indebidas",
+    "explanation_short": "Tu contrato tiene comisiones no informadas o desproporcionadas. La ley exige información clara antes de firmar. Puedes reclamar el cobro.",
+    "action": "iniciar_reclamo_sernac",
+    "articulos_referencia": ["Ley 20.555", "Ley 19.496 Art. 17 B", "Ley 19.496 Art. 3"],
+    "priority": 2
+  },
+  {
+    "id": "vuln_012",
+    "segment": "vulnerable",
+    "trigger": "portabilidad_disponible",
+    "title": "Puedes portar tu deuda y bajar la tasa",
+    "explanation_short": "La Ley de Portabilidad te deja mover tu crédito a otro banco con mejor oferta. Es gratis y nadie te lo puede impedir.",
+    "action": "solicitar_portabilidad",
+    "articulos_referencia": ["Ley 21.236 Art. 1", "Ley 21.236 Art. 5"],
+    "priority": 2
+  },
+  {
+    "id": "rb_001",
+    "segment": "recently_banked",
+    "trigger": "first_credit_card_consideration",
+    "title": "Tu primera tarjeta de crédito sin riesgo",
+    "explanation_short": "Para tu primera tarjeta: cupo bajo, paga el total cada mes y nunca uses avance en efectivo. Construyes historial sin caer en deuda.",
+    "action": "educar_historial",
+    "articulos_referencia": ["Ley 20.555"],
+    "priority": 2
+  },
+  {
+    "id": "rb_002",
+    "segment": "recently_banked",
+    "trigger": "build_credit_history",
+    "title": "Construye un historial financiero sano",
+    "explanation_short": "Pagar a tiempo cuentas básicas y la tarjeta construye tu historial positivo. Eso te da acceso a mejores tasas en hipotecario más adelante.",
+    "action": "educar_historial",
+    "articulos_referencia": ["Ley 19.628", "Ley 20.575"],
+    "priority": 3
+  },
+  {
+    "id": "rb_003",
+    "segment": "recently_banked",
+    "trigger": "low_cost_account_available",
+    "title": "Cuenta vista gratuita: tu derecho",
+    "explanation_short": "Tienes derecho a cuenta vista sin mantención mensual. Si te están cobrando comisiones que no se informaron al contratar, puedes reclamar.",
+    "action": "iniciar_reclamo_sernac",
+    "articulos_referencia": ["Ley 20.555", "Ley 19.496 Art. 3"],
+    "priority": 2
+  },
+  {
+    "id": "fun_001",
+    "segment": "functional",
+    "trigger": "mortgage_rate_negotiable",
+    "title": "Negocia la tasa de tu hipotecario",
+    "explanation_short": "Si tu hipotecario tiene años, puedes renegociarlo o portarlo. Una baja de un punto se traduce en millones a 20 años.",
+    "action": "solicitar_portabilidad",
+    "articulos_referencia": ["Ley 21.236 Art. 1", "Ley 21.236 Art. 5"],
+    "priority": 2
+  },
+  {
+    "id": "fun_002",
+    "segment": "functional",
+    "trigger": "product_optimization",
+    "title": "Optimiza productos que ya no usas",
+    "explanation_short": "Tarjetas con mantención que no usas, seguros que se renovaron solos: revisar y cancelar libera ingreso para ahorro o inversión.",
+    "action": "comparar_tasas_mercado",
+    "articulos_referencia": ["Ley 20.555", "Ley 19.496 Art. 3 bis"],
+    "priority": 3
+  },
+  {
+    "id": "fun_003",
+    "segment": "functional",
+    "trigger": "savings_setup_recommended",
+    "title": "Activa ahorro automático mensual",
+    "explanation_short": "Con tu carga financiera bajo control, el siguiente paso es ahorro automático y un primer fondo de emergencia equivalente a tres meses de gasto.",
+    "action": "educar_historial",
+    "articulos_referencia": [],
+    "priority": 3
+  },
+  {
+    "id": "unb_001",
+    "segment": "unbanked",
+    "trigger": "first_account_recommended",
+    "title": "Tu primera cuenta segura: CuentaRUT o cuenta vista",
+    "explanation_short": "Una CuentaRUT o cuenta vista gratuita en BancoEstado te abre la puerta al sistema sin riesgo de deuda. No tiene línea de crédito.",
+    "action": "abrir_cuenta_rut",
+    "articulos_referencia": ["Ley 20.555"],
+    "priority": 2
+  },
+  {
+    "id": "unb_002",
+    "segment": "unbanked",
+    "trigger": "informal_lender_risk",
+    "title": "Cuidado con prestamistas informales",
+    "explanation_short": "Los prestamistas que cobran sobre la TMC son ilegales. No tienes que pagar lo que se cobra por sobre el máximo legal. Puedes denunciar.",
+    "action": "iniciar_reclamo_sernac",
+    "articulos_referencia": ["Ley 18.010 Art. 6", "Ley 18.010 Art. 8"],
+    "priority": 1
+  },
+  {
+    "id": "unb_003",
+    "segment": "unbanked",
+    "trigger": "build_history_without_credit",
+    "title": "Construye historial sin endeudarte",
+    "explanation_short": "Pagar cuentas de servicios a tiempo y mantener una cuenta vista activa empieza a generar trazabilidad financiera. Sin necesidad de tarjeta de crédito.",
+    "action": "educar_historial",
+    "articulos_referencia": ["Ley 19.628"],
+    "priority": 3
+  }
+]

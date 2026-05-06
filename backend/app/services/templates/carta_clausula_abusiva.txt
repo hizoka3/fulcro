@@ -1,0 +1,42 @@
+DENUNCIA POR CLÁUSULA ABUSIVA EN CONTRATO DE ADHESIÓN
+Ley N° 19.496 sobre Protección de los Derechos de los Consumidores
+
+Fecha: {fecha}
+Denunciante: {avatar_nombre} (identidad anonimizada vía Defensor)
+
+INSTITUCIÓN DENUNCIADA:
+{institucion}
+
+PRODUCTO O CONTRATO:
+{producto}
+
+CLÁUSULA OBJETADA:
+{clausula_objetada}
+
+MOTIVO DE LA DENUNCIA:
+{motivo}
+
+FUNDAMENTO LEGAL:
+{articulos_invocados}
+
+DESCRIPCIÓN DETALLADA:
+{descripcion}
+
+PETICIÓN:
+1. Declarar la cláusula objetada como abusiva, en los términos de la Ley 19.496, y por
+   tanto inaplicable al contrato.
+2. Disponer la modificación del contrato de adhesión para los demás consumidores que se
+   encuentren en la misma situación.
+3. Reembolsar los cobros indebidos derivados de la aplicación de la cláusula objetada,
+   con sus reajustes e intereses cuando corresponda.
+4. Aplicar las sanciones administrativas que el SERNAC estime pertinentes según la
+   gravedad de los hechos.
+
+DOCUMENTOS DE RESPALDO:
+- Informe de deuda CMF (anonimizado)
+- Copia del contrato o cláusula objetada (cuando esté disponible)
+
+Firma:
+{avatar_nombre}
+Denuncia generada vía Defensor (defensorchile.org)
+Nota: este documento es un borrador educativo. No constituye asesoría legal formal.
