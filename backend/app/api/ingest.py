@@ -8,7 +8,7 @@ from app.core.anonymizer import anonymize_identity, generate_avatar_name
 from app.core.catalog_matcher import get_matcher
 from app.core.classifier import classify
 from app.core.parser_cmf import extract_identity, parse_informe_with_fallback
-from app.db.sqlite import ProfileRecord, get_db
+from app.db.sqlite import ProfileRecord, get_db, hash_features
 from app.models.schemas import Avatar, Features, IngestResult
 
 router = APIRouter()
@@ -50,7 +50,7 @@ async def ingest(
             dominant_signal=features_dict.get("dominant_signal", ""),
         )
 
-        _upsert_profile(db, anon_id, segment.value, features_obj, recommendations)
+        _save_snapshot(db, anon_id, segment.value, features_obj, recommendations)
 
         return IngestResult(
             anon_id=anon_id,
@@ -76,28 +76,33 @@ def _to_features(d: dict) -> Features:
     )
 
 
-def _upsert_profile(
+def _save_snapshot(
     db: Session,
     anon_id: str,
     segment: str,
     features: Features,
     recommendations: list,
 ) -> None:
+    """Insert a new snapshot row, or no-op if (anon_id, content_hash) already
+    exists — i.e. the same person re-uploaded the same document."""
     features_json = features.model_dump()
-    recs_json = [r.model_dump() for r in recommendations]
+    content_hash = hash_features(features_json)
 
-    existing = db.query(ProfileRecord).filter_by(anon_id=anon_id).first()
+    existing = (
+        db.query(ProfileRecord.id)
+        .filter_by(anon_id=anon_id, content_hash=content_hash)
+        .first()
+    )
     if existing:
-        existing.segment = segment
-        existing.features = features_json
-        existing.recommendations = recs_json
-    else:
-        db.add(
-            ProfileRecord(
-                anon_id=anon_id,
-                segment=segment,
-                features=features_json,
-                recommendations=recs_json,
-            )
+        return
+
+    db.add(
+        ProfileRecord(
+            anon_id=anon_id,
+            content_hash=content_hash,
+            segment=segment,
+            features=features_json,
+            recommendations=[r.model_dump() for r in recommendations],
         )
+    )
     db.commit()
